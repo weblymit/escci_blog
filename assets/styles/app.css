@@ -8,3 +8,7 @@
     @apply border border-gray-300 rounded w-full my-3;
   }
 }
+
+form > div > div > ul > li {
+  color: red;
+}

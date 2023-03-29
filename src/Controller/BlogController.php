@@ -49,7 +49,7 @@ class BlogController extends AbstractController
 	}
 
 	#[Route('/create', name: 'app_create', methods: ['GET', 'POST'])]
-	public function create(PostRepository $repo, Request $request, EntityManagerInterface $em): Response
+	public function create(Request $request, EntityManagerInterface $em): Response
 	{
 		// 1- create new objet
 		$post = new Post;
@@ -60,7 +60,7 @@ class BlogController extends AbstractController
 		// 1- recuperer data de mes input
 		$form->handleRequest($request);
 		// 2- soumission du formulaire
-		if ($form->isSubmitted()) {
+		if ($form->isSubmitted() && $form->isValid()) {
 			// stock les data du user
 			$newPost = $form->getData();
 			// verifie si une image a été choisi
