@@ -1,0 +1,24 @@
+{# utilisation du layout #}
+{% extends "base.html.twig" %}
+
+{# title of page #}
+{% block title %}
+Accueil
+{% endblock %}
+
+{# content #}
+{% block body %}
+	<div class="max-w-md mx-auto">
+		<h1 class="text-indigo-700 font-bold text-3xl pb-8">Créer un article</h1>
+
+	{# {{ form(showForm) }} #}
+
+		{{ form_start(showForm, {'attr': {'novalidate': 'novalidate'}}) }}
+			{{ form_widget(showForm) }}
+			<div class="mt-5">
+				<input type="submit" value="Envoyer" class="btn btn-primary">
+			</div>
+		{{ form_end(showForm) }}
+	</div>
+	
+{% endblock %}

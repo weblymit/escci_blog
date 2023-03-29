@@ -2,9 +2,10 @@
 
 namespace App\Entity;
 
-use App\Repository\PostRepository;
+// use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\PostRepository;
 
 #[ORM\Entity(repositoryClass: PostRepository::class)]
 class Post

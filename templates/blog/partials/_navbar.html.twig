@@ -1,10 +1,10 @@
 <div class="navbar bg-base-100">
   <div class="flex-1">
-    <a class="btn btn-ghost normal-case text-xl">TotoBlog</a>
+    <a class="btn btn-ghost normal-case text-xl" href="{{ path('app_home') }}">TotoBlog</a>
   </div>
   <div class="flex-none">
     <ul class="menu menu-horizontal px-1">
-      <li><a>Créer un article</a></li>
+      <li><a href="{{ path('app_create') }}">Créer un article</a></li>
       <li><a>Connexion</a></li>
     </ul>
   </div>

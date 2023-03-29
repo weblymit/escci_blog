@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@layer components {
+  .form {
+    @apply border border-gray-300 rounded w-full my-3;
+  }
+}
