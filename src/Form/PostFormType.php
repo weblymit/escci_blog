@@ -57,14 +57,15 @@ class PostFormType extends AbstractType
 				]
 			])
 			->add('url_img', FileType::class, [
+				'mapped' => false,
 				'attr' => [
 					'class' => 'form'
 				],
-				'label' => "Titre du post",
+				'label' => "Votre image",
 				'constraints' => [
-					new NotBlank([
-						"message" => "Champs obligatoire"
-					]),
+					// new NotBlank([
+					// 	"message" => "Champs obligatoire"
+					// ]),
 					new File([
 						'maxSize' => '3M',
 						'maxSizeMessage' => 'Votre fichier ne doit pas depasser {{ limit }}',

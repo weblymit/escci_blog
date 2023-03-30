@@ -15,10 +15,14 @@
 	</div>
 	<div class="">
 		<p>{{ post.content }}</p>
+		<p class="italic pt-6 text-gray-500">par {{ post.author}}</p>
 	</div>
-	<div class="mt-6">
-		<a href="" class="btn btn-primary">Modifier</a>
-		<a href="{{ path('app_delete', {'id': post.id}) }}" class="btn btn-error">Supprimer</a>
-	</div>
+	{% if app.user %}
+		<div class="mt-6">
+			<a href="{{ path('app_update', {'id': post.id}) }}" class="btn btn-primary">Modifier</a>
+			<a href="{{ path('app_delete', {'id': post.id}) }}" class="btn btn-error">Supprimer</a>
+		</div>
+	{% endif %}
+	
 </div>
 {% endblock %}

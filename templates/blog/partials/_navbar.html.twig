@@ -4,8 +4,21 @@
   </div>
   <div class="flex-none">
     <ul class="menu menu-horizontal px-1">
-      <li><a href="{{ path('app_create') }}">Créer un article</a></li>
-      <li><a>Connexion</a></li>
+      <li>
+        {% if app.user  %}
+          <a href="{{ path('app_create') }}">Créer un article</a>
+        {% endif %}
+      </li>
+      <li>
+        <a href="/{{ app.user ? 'logout' : 'login' }}">
+          {{ app.user ? 'Déconnexion' : 'Connexion' }}
+        </a>
+      </li>
+      <li>
+      {% if app.user %}
+        <button class="btn btn-info">{{ app.user.email }}</button>
+      {% endif %}
+      </li>
     </ul>
   </div>
 </div>
